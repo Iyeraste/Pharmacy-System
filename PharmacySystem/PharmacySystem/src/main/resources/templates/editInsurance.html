@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Edit Medicines</title>
+</head>
+<body style="background: #C0C0C0;">
+<div class="container border border-secondary rounded p-3 mt-5 text-center" style="width:600px;">
+    <form th:action="@{/addIns}" method="post" th:object="${insurance}">
+        <h5>Edit Insurance</h5>
+        <input hidden th:value="${insurance.clId}" th:field="*{clId}">
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="ins-id" th:field="*{insId}" name="ins-id" placeholder="Insurance">
+            <label for="ins-id">Insurance No.</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="ins-name" th:field="*{insName}" name="ins-name" placeholder="Insurance">
+            <label for="ins-name">Ins Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="ins-date" th:field="*{insDate}" name="ins-date" placeholder="Insurance">
+            <label for="ins-date">Date of Issue</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="exp-date" th:field="*{expDate}" name="exp-date" placeholder="Insurance">
+            <label for="exp-date">Expiration Date</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="ins-cov" th:field="*{paycov}" name="ins-cov" placeholder="Insurance">
+            <label for="ins-cov">Coverage</label>
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
